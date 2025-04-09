@@ -1,13 +1,12 @@
 $(document).ready(function () {
   const items = [
-    { name: "5 Coins XFUN", probability: 40, image: "itemxfun.png" },      // Changed from item.png
-    { name: "5 Coins RustMagic", probability: 25, image: "item.png" },
-    { name: "7.5 Coins RustMagic", probability: 15, image: "item3.png" },
-    { name: "10 Coins XFUN", probability: 10, image: "item3xfun.png" },     // Changed from item3.png
+    { name: "5 Coins RustMagic", probability: 60, image: "item.png" },
+    { name: "5$ Upgrader", probability: 20, image: "itemxfun.png" },
+    { name: "7.5 Coins RustMagic", probability: 10, image: "item3.png" },
     { name: "10 Coins RustMagic", probability: 5, image: "item3.png" },
-    { name: "15 Coins XFUN", probability: 4, image: "item5xfun.png" },      // Changed from item5.png
-    { name: "15 Coins RustMagic", probability: 1, image: "item5.png" },
-];
+    { name: "7.5$ Upgrader", probability: 2.5, image: "item3xfun.png" },
+    { name: "15 Coins RustMagic", probability: 2.5, image: "item5.png" },
+  ];
 
   function getShortName(fullName) {
     if (fullName.includes("Coins")) {
