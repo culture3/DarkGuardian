@@ -1,11 +1,14 @@
 $(document).ready(function () {
   const items = [
-    { name: "5 Coins RustMagic", probability: 60, image: "item.png" },
-    { name: "5$ Upgrader", probability: 20, image: "itemxfun.png" },
+    { name: "5 Coins RustMagic", probability: 50, image: "item.png" },
+    { name: "5$ Upgrader", probability: 10, image: "itemxfun.png" },
     { name: "7.5 Coins RustMagic", probability: 10, image: "item3.png" },
     { name: "10 Coins RustMagic", probability: 5, image: "item3.png" },
     { name: "7.5$ Upgrader", probability: 2.5, image: "item3xfun.png" },
     { name: "15 Coins RustMagic", probability: 2.5, image: "item5.png" },
+    { name: "Feet Pic", probability: 10, image: "feet.png" },
+    { name: "VIP Badge", probability: 5, image: "VIP.png" },
+    { name: "OG Badge", probability: 5, image: "OG.png" },
   ];
 
   function getShortName(fullName) {
@@ -79,7 +82,7 @@ $(document).ready(function () {
       const isTop10 = !isSpecialSpin && top10PercentItems.some(item => item.name === randomItem.name);
       const displayImage = isTop10 ? "gold.gif" : randomItem.image;
       const shortName = getShortName(randomItem.name);
-      const displayName = isTop10 ? "DARK Spin" : shortName; // Changed from "HD Spin" to "DARK Spin"
+      const displayName = isTop10 ? "DARK Spin" : shortName;
       const itemDiv = $(
         `<div class="item">
           <div class="item-wrapper">
@@ -128,7 +131,7 @@ $(document).ready(function () {
     reelItems[stopIndex] = winningItem;
     const displayImage = isTop10Percent && !isSpecialSpin ? "gold.gif" : winningItem.image;
     const shortName = getShortName(winningItem.name);
-    const displayNameDuringSpin = isTop10Percent && !isSpecialSpin ? "DARK Spin" : shortName; // Changed from "HD Spin" to "DARK Spin"
+    const displayNameDuringSpin = isTop10Percent && !isSpecialSpin ? "DARK Spin" : shortName;
     $(spinContainer.children()[stopIndex]).html(
       `<div class="item-wrapper">
         <img src="TM.png" alt="Watermark" class="watermark">
@@ -171,7 +174,7 @@ $(document).ready(function () {
                 winningElement.find(".item-image").addClass("float-image");
                 $(".item").not(winningElement).css("opacity", 0.5);
 
-                const fullDisplayName = isTop10Percent && !isSpecialSpin ? "DARK Spin" : winningItem.name; // Changed from "HD Spin" to "DARK Spin"
+                const fullDisplayName = isTop10Percent && !isSpecialSpin ? "DARK Spin" : winningItem.name;
                 winningElement.find(".item-wrapper").html(
                   `<img src="TM.png" alt="Watermark" class="watermark">
                    <img src="${displayImage}" alt="${fullDisplayName}" class="item-image float-image">
