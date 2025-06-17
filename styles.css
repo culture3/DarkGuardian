@@ -95,26 +95,29 @@ body {
 
 .item-list-items {
   display: flex;
-  justify-content: space-between; /* Distributes items evenly across the row */
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: center; /* Center items horizontally */
   width: 1000px;
   max-width: 1000px;
   margin-top: 10px;
-  gap: 2px; /* Keep the small gap */
-  flex-wrap: nowrap; /* Prevents wrapping to a new line */
+  gap: 20px; /* Increased gap for better spacing */
+  padding: 0 10px; /* Optional padding to prevent edge clipping */
+  box-sizing: border-box;
 }
 
 .item-list-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 16%; /* Approximately 1000px / 6 items = ~166px each, adjusted for gaps */
+  width: calc(20% - 16px); /* 20% of 1000px = 200px, minus 16px for gap (80px total gap / 5 items) */
   margin-bottom: 10px;
   transition: transform 0.05s linear, box-shadow 0.05s linear;
+  box-sizing: border-box;
 }
 
-/* Remove the nth-child rule that was making items wider on second row */
+/* Remove the nth-child rule as it's no longer needed */
 .item-list-item:nth-child(n+5) {
-  width: 16%; /* Keep all items the same width */
+  width: calc(20% - 16px); /* Same width for all items */
 }
 
 .item-list-item:hover {
@@ -245,4 +248,21 @@ body {
 /* Adjust the winning-item-text position when gold.gif is used */
 .item-wrapper img[src="gold.gif"] + .winning-item-text {
     bottom: 0px; /* Adjusted to give more space between image and text */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .item-list-items {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .item-list-item {
+    width: calc(33.33% - 13.33px); /* 3 items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .item-list-item {
+    width: calc(50% - 10px); /* 2 items per row */
+  }
 }
