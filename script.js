@@ -6,7 +6,7 @@ $(document).ready(function () {
     { name: "10 Coins RustMagic", probability: 5, image: "item3.png" },
     { name: "7.5$ Upgrader", probability: 2.5, image: "item3xfun.png" },
     { name: "15 Coins RustMagic", probability: 2.5, image: "item5.png" },
-    { name: "Feet Pic", probability: 10, image: "feet.png" },
+    { name: "Feet", probability: 10, image: "feet.png" },
     { name: "VIP Badge", probability: 5, image: "VIP.png" },
     { name: "OG Badge", probability: 5, image: "OG.png" },
   ];
